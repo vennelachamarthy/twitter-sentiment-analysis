@@ -23,4 +23,4 @@ jupyter notebook notebooks/sentiment\_analysis.ipynb
 ```
 
 Live Demo
-Coming soon — Streamlit deployment in progress
+Live Demo: [Twitter Sentiment Analyzer](https://twitter-sentiment-analysis-vq3zws8tfsrtbht9fbutev.streamlit.app)
