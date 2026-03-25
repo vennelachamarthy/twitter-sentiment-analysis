@@ -3,6 +3,7 @@ import joblib
 import re
 import nltk
 from nltk.corpus import stopwords
+import os
 
 nltk.download('stopwords', quiet=True)
 stop_words = set(stopwords.words('english'))
@@ -15,10 +16,9 @@ st.set_page_config(
 
 @st.cache_resource
 def load_model():
-    import os
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-model = joblib.load(os.path.join(BASE_DIR, 'models', 'logistic_regression_model.pkl'))
-vectorizer = joblib.load(os.path.join(BASE_DIR, 'models', 'tfidf_vectorizer.pkl'))
+    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    model = joblib.load(os.path.join(BASE_DIR, 'models', 'logistic_regression_model.pkl'))
+    vectorizer = joblib.load(os.path.join(BASE_DIR, 'models', 'tfidf_vectorizer.pkl'))
     return model, vectorizer
 
 model, vectorizer = load_model()
